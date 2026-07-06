@@ -351,9 +351,19 @@ body.loaded .envelope-wrapper {
     align-items: start;
 }
 
+.hero-right {
+    align-self: end;
+    margin-bottom: var(--space-lg);
+}
+
 @media (max-width: 900px) {
     .hero-container {
         grid-template-columns: 1fr;
+    }
+
+    .hero-right {
+        align-self: stretch;
+        margin-bottom: 0;
     }
 }
 
