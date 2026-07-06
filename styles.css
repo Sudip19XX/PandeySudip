@@ -340,8 +340,21 @@ body.loaded .envelope-wrapper {
     text-align: left;
     padding: var(--space-xl) 0 0 0;
     position: relative;
-    max-width: 800px;
+    max-width: var(--content-max-width);
     margin: 0 auto;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hero-main {
@@ -1050,14 +1063,36 @@ body.loaded .envelope-wrapper {
 .skills-bullet-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
-    max-width: 800px;
+    gap: var(--space-md);
+    width: 100%;
     margin: 0 auto;
+}
+
+.skills-sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.skills-sidebar-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--color-primary-red);
+    border-radius: 2px;
 }
 
 .skills-bullet-group {
     border-bottom: 1px solid var(--color-light-gray);
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
 }
 
 .skills-bullet-group:last-child {
@@ -1067,7 +1102,7 @@ body.loaded .envelope-wrapper {
 
 .skills-category-title {
     font-family: var(--font-heading);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--color-primary-blue);
     margin-bottom: var(--space-xs);
@@ -1075,13 +1110,13 @@ body.loaded .envelope-wrapper {
 
 .skills-bullet-list {
     list-style-type: disc;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-md);
     margin: 0;
 }
 
 .skills-bullet-list li {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
     margin-bottom: var(--space-xs);
 }
